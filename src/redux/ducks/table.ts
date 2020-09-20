@@ -8,11 +8,13 @@ const users = new schema.Entity('users')
 const mySchema = { users: [users] }
 
 export interface TableState {
+  isLoading: boolean
   tableData: TableRowInfo[]
   page: number
 }
 
 const initialState: TableState = {
+  isLoading: false,
   tableData: [],
   page: 0,
 }
@@ -22,7 +24,7 @@ const reducer = createSlice({
   initialState,
   reducers: {
     requestApi(state: TableState) {
-      console.log('requesting...')
+      state.isLoading = true
     },
     addTableData(state: TableState, action: ResponseAction) {
       const response = action.response
@@ -33,9 +35,12 @@ const reducer = createSlice({
       } else {
         state.tableData = Object.values(normalizedData.result)
       }
+
+      state.isLoading = false
     },
     updateError(state: TableState, action: ResponseAction) {
       console.error(action.error)
+      state.isLoading = false
     },
     deleteElements(state: TableState, action: PayloadAction<number[]>) {
       state.tableData = state.tableData.filter(

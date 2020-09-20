@@ -11,10 +11,12 @@ import {
   updateVerification,
 } from '../../redux/ducks/table'
 
-import { VerifiedBadge } from './style'
+import { VerifiedBadge, LoadingSpinner } from './style'
 
 const Home = () => {
-  const { tableData, page } = useSelector((state: RootState) => state.table)
+  const { isLoading, tableData, page } = useSelector(
+    (state: RootState) => state.table
+  )
   const dispatch = useDispatch()
   const [titles] = useState([
     'Storyteller',
@@ -67,15 +69,21 @@ const Home = () => {
   }
 
   return (
-    <Table
-      tableData={tableData}
-      columnTitles={titles}
-      renderRow={renderRow}
-      onDelete={handleDelete}
-      onEdit={setElementsEditing}
-      page={page}
-      onPageChange={value => dispatch(updatePage(value))}
-    />
+    <>
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <Table
+          tableData={tableData}
+          columnTitles={titles}
+          renderRow={renderRow}
+          onDelete={handleDelete}
+          onEdit={setElementsEditing}
+          page={page}
+          onPageChange={value => dispatch(updatePage(value))}
+        />
+      )}
+    </>
   )
 }
 
