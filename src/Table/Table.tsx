@@ -83,14 +83,14 @@ const Table = ({
                 isChecked={isAllSelected}
               />
             </th>
-            {columnTitles.map(title => (
-              <th>{title}</th>
+            {columnTitles.map((title, i) => (
+              <th key={i}>{title}</th>
             ))}
           </tr>
         </TableHeader>
         <TableBody>
           {tableData.slice(0 + 10 * page, 10 + 10 * page).map((data: any) => (
-            <Row id={data.id}>
+            <Row key={data.id}>
               <>
                 <Cell>
                   <DeleteCheck

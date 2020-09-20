@@ -28,7 +28,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(fetchTable())
-  }, [])
+  }, [dispatch])
 
   const handleDelete = (elementsToBeDeleted: number[]) => {
     dispatch(deleteElements(elementsToBeDeleted))
