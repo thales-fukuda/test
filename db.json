@@ -183,7 +183,7 @@
     {
       "id": 21,
       "info": {
-        "userName": "Michael Warshafsky",
+        "userName": "Michael Warshafsk",
         "capacity": 10,
         "verification": false,
         "tags": ["2020 VIP"]
@@ -201,7 +201,7 @@
     {
       "id": 23,
       "info": {
-        "userName": "User Example",
+        "userName": "Michael Warshafsk",
         "capacity": 10,
         "verification": true,
         "tags": ["2020 VIP"]
@@ -219,7 +219,7 @@
     {
       "id": 25,
       "info": {
-        "userName": "User Example",
+        "userName": "Michael Warshafsk",
         "capacity": 10,
         "verification": false,
         "tags": ["2020 VIP"]
@@ -229,60 +229,6 @@
       "id": 26,
       "info": {
         "userName": "User Example",
-        "capacity": 10,
-        "verification": true,
-        "tags": ["2020 VIP"]
-      }
-    },
-    {
-      "id": 27,
-      "info": {
-        "userName": "User Example",
-        "capacity": 10,
-        "verification": false,
-        "tags": ["2020 VIP"]
-      }
-    },
-    {
-      "id": 28,
-      "info": {
-        "userName": "Michael Warshafsky",
-        "capacity": 10,
-        "verification": true,
-        "tags": ["2020 VIP"]
-      }
-    },
-    {
-      "id": 29,
-      "info": {
-        "userName": "User Example",
-        "capacity": 10,
-        "verification": false,
-        "tags": ["2020 VIP"]
-      }
-    },
-    {
-      "id": 30,
-      "info": {
-        "userName": "Michael Warshafsky",
-        "capacity": 10,
-        "verification": true,
-        "tags": ["2020 VIP"]
-      }
-    },
-    {
-      "id": 31,
-      "info": {
-        "userName": "Michael Warshafsky",
-        "capacity": 10,
-        "verification": false,
-        "tags": ["2020 VIP"]
-      }
-    },
-    {
-      "id": 32,
-      "info": {
-        "userName": "User",
         "capacity": 10,
         "verification": true,
         "tags": ["2020 VIP"]
