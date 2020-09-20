@@ -48,3 +48,13 @@ export type GenericAPIResponse = {
   status: number
   message: string
 }
+
+export type TableRowInfo = {
+  id: number
+  info: {
+    userName: string
+    capacity: number
+    verification: boolean
+    tags: string[]
+  }
+}
