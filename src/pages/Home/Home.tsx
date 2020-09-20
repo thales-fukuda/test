@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import Table, { TableCell, Row } from '../Table'
-import { RootState } from '../redux/types'
+import Table, { TableCell } from '../../Table'
+import { RootState } from '../../redux/types'
 import {
   fetchTable,
   deleteElements,
   updateElement,
   updatePage,
-} from '../redux/ducks/table'
+  updateVerification,
+} from '../../redux/ducks/table'
+
+import { VerifiedBadge } from './style'
 
 const Home = () => {
   const { tableData, page } = useSelector((state: RootState) => state.table)
@@ -44,7 +47,19 @@ const Home = () => {
           <>{data.info.capacity} stories/day</>
         </TableCell>
         <TableCell type='button'>
-          {data.info.verification ? 'Verified' : 'Not Verified'}
+          {data.info.verification ? (
+            <VerifiedBadge verified>Verified</VerifiedBadge>
+          ) : (
+            <VerifiedBadge
+              onClick={() =>
+                dispatch(
+                  updateVerification({ id: data.id, verification: true })
+                )
+              }
+            >
+              Verify
+            </VerifiedBadge>
+          )}
         </TableCell>
         <TableCell type='text'>{data.info.tags}</TableCell>
       </>

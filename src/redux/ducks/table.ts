@@ -52,14 +52,23 @@ const reducer = createSlice({
       state.tableData[index].info.userName = action.payload.value
     },
     updatePage(state: TableState, action: PayloadAction<1 | -1>) {
-      console.log(10 * state.page + 1, state.tableData.length)
       if (
         state.page + action.payload < 0 ||
-        10 * (state.page + action.payload + 1) > state.tableData.length
+        10 * (state.page + action.payload + 1) > state.tableData.length + 10 ||
+        10 * (state.page + action.payload + 1) === state.tableData.length
       ) {
         return
       }
       state.page = state.page + action.payload
+    },
+    updateVerification(
+      state: TableState,
+      action: PayloadAction<{ id: number; verification: boolean }>
+    ) {
+      const index = state.tableData.findIndex(
+        element => element.id === action.payload.id
+      )
+      state.tableData[index].info.verification = action.payload.verification
     },
   },
 })
@@ -71,6 +80,7 @@ export const {
   deleteElements,
   updateElement,
   updatePage,
+  updateVerification,
 } = reducer.actions
 
 export default reducer.reducer

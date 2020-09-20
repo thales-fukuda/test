@@ -8,6 +8,12 @@ export const Container = styled.div`
   border-radius: 8px;
   padding: 20px 30px;
   font-family: 'Roboto', sans-serif;
+
+  @media screen and (max-width: 720px) {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
 `
 
 export const TableWrapper = styled.table`
@@ -26,15 +32,28 @@ export const TableHeader = styled.thead`
 
 export const TableBody = styled.tbody``
 
-export const Row = styled.tr``
+export const Row = styled.tr`
+  height: 20px;
+`
 
 export const Cell = styled.td`
   span {
     font-size: 14px;
   }
+  label {
+    font-size: 14px;
+  }
   input {
     height: 100%;
     padding: 0 10px;
+  }
+  @media screen and (max-width: 720px) {
+    span {
+      font-size: 10px;
+    }
+    label: {
+      font-size: 10px;
+    }
   }
 `
 
