@@ -91,7 +91,7 @@ export const {
 export default reducer.reducer
 
 export const fetchTable = () => {
-  const URL = 'http://my-json-server.typicode.com/thales-fukuda/test/db'
+  const URL = 'https://my-json-server.typicode.com/thales-fukuda/test/db'
   // const URL = 'https://5f6781d638ce8700163986bd.mockapi.io/users/storytellers'
   return {
     type: [requestApi.type, addTableData.type, updateError.type],
