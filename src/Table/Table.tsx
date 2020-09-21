@@ -106,7 +106,10 @@ const Table = ({
       </TableWrapper>
       <ButtonWrapper>
         <Button onClick={() => onDelete(elementsSelected)}>Delete</Button>
-        <Button onClick={handleEdit} secondary>
+        <Button
+          onClick={elementsSelected.length ? handleEdit : () => {}}
+          secondary
+        >
           {isEditing ? 'Confirm' : 'Edit'}
         </Button>
         <PaginationButtonsWrapper>
