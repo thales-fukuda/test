@@ -54,7 +54,7 @@ const reducer = createSlice({
       const index = state.tableData.findIndex(
         element => element.id === action.payload.id
       )
-      state.tableData[index].info.userName = action.payload.value
+      state.tableData[index].userName = action.payload.value
     },
     updatePage(state: TableState, action: PayloadAction<1 | -1>) {
       if (
@@ -73,7 +73,7 @@ const reducer = createSlice({
       const index = state.tableData.findIndex(
         element => element.id === action.payload.id
       )
-      state.tableData[index].info.verification = action.payload.verification
+      state.tableData[index].verification = action.payload.verification
     },
   },
 })
@@ -91,8 +91,8 @@ export const {
 export default reducer.reducer
 
 export const fetchTable = () => {
-  const URL = 'https://my-json-server.typicode.com/thales-fukuda/test/db'
-  // const URL = 'https://5f6781d638ce8700163986bd.mockapi.io/users/storytellers'
+  // const URL = 'https://my-json-server.typicode.com/thales-fukuda/test/db'
+  const URL = 'https://5f6781d638ce8700163986bd.mockapi.io/users/storytellers'
   return {
     type: [requestApi.type, addTableData.type, updateError.type],
     callAPI: () => axios.get(URL),

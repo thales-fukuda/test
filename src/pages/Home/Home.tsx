@@ -41,15 +41,15 @@ const Home = () => {
         <TableCell
           type={isEditing ? 'input' : 'text'}
           onChange={value => dispatch(updateElement({ id: data.id, value }))}
-          value={data.info.userName}
+          value={data.userName}
         >
-          {isEditing ? null : data.info.userName}
+          {isEditing ? null : data.userName}
         </TableCell>
         <TableCell type='text'>
-          <>{data.info.capacity} stories/day</>
+          <>{data.capacity} stories/day</>
         </TableCell>
         <TableCell type='button'>
-          {data.info.verification ? (
+          {data.verification ? (
             <VerifiedBadge verified>Verified</VerifiedBadge>
           ) : (
             <VerifiedBadge
@@ -63,7 +63,7 @@ const Home = () => {
             </VerifiedBadge>
           )}
         </TableCell>
-        <TableCell type='text'>{data.info.tags}</TableCell>
+        <TableCell type='text'>{data.tags}</TableCell>
       </>
     )
   }

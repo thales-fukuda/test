@@ -51,10 +51,8 @@ export type GenericAPIResponse = {
 
 export type TableRowInfo = {
   id: number
-  info: {
-    userName: string
-    capacity: number
-    verification: boolean
-    tags: string[]
-  }
+  userName: string
+  capacity: number
+  verification: boolean
+  tags: string[]
 }
